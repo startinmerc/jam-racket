@@ -56,11 +56,11 @@ svg {
 	height: 77px;
 	transition: all 300ms ease-in;
 	z-index: 10;
+	width: 70vw;
 }
 
 .menuActive {
 	height: 410px;
-	mix-blend-mode: hue;
 }
 
 .menuTop {
@@ -110,7 +110,6 @@ svg {
   clip-path:     polygon(39% 100%, 59% 0%, 100% 0%, 100% 100%);
   height: 100vh;
   width: 100vw;
-  /*background: var(--jr-yellow);*/
 }
 
 #green .text {
@@ -120,13 +119,9 @@ svg {
 }
 
 #green img {
-	width: 40vw;
-	height: auto;
-	position: absolute;
-	left: 10%;
-	bottom: 150px;
-	mix-blend-mode: saturation;
-	z-index: 0;
+	left: 0;
+	bottom: 0;
+	/*clip-path: url(#jam-clip);*/
 }
 
 #red {
@@ -137,11 +132,10 @@ svg {
 
 #red .polygon {
   float: left;
-  shape-outside: polygon(39% 100%, 59% 0%, 61% 0%, 41% 100%);
-  clip-path:     polygon(39% 100%, 59% 0%, 61% 0%, 41% 100%);
+  shape-outside: polygon(41% 100%, 61% 0%, 0% 0%, 0% 100%);
+  clip-path:     polygon(41% 100%, 61% 0%, 0% 0%, 0% 100%);
   height: 100vh;
   width: 100vw;
-  background: var(--jr-yellow);
 }
 
 #red .text {
@@ -149,12 +143,16 @@ svg {
 	padding-bottom: 150px;
 }
 
-#red img {
-	width: 40vw;
+img {
+	max-width: 40vw;
 	height: auto;
 	position: absolute;
-	right: 10%;
-	bottom: 150px;
 	mix-blend-mode: saturation;
 	z-index: 0;
+}
+
+#red img {
+	right: 0;
+	top: 77px;
+	/*clip-path: url(#racket-clip);*/
 }
