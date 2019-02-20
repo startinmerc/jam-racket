@@ -1,10 +1,6 @@
 const $menuTitle = $("#menuTitle"),
 	$menuLis = Array.from($(".menuItem")),
-	$menu = $('.menu:first'),
-	content = [
-	"<h1>HEADER_1</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-	"<h1>HEADER_2</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
-	];
+	$menu = $('.menu:first');
 
 $menuTitle.click(function(){
 	$menu.toggleClass("menuActive");
@@ -19,25 +15,50 @@ var listPop = anime({
 
 document.querySelector("#menuTitle").onclick = listPop.play;
 
-for (var i=0; i < $menuLis.length; i++) {
-	$menuLis[i].addEventListener("click", function(){
-		menuClick();
-		updateGreen(0);
-		updateRed(1);
-	});
-}
-
 function menuClick() {
 	$menu.removeClass("menuActive");
 	$menu.addClass("menuTop");
 }
 
 function updateGreen(i) {
-	$("#green .text").html(content[i]);
+	$("#green .text").html(greenContent[i]);
 }
 
 function updateRed(i) {
 	$("#red .text").css("margin-top", $("#green .text").height() + 150);
-	$("#red .text").html(content[i]);
+	$("#red .text").html(redContent[i]);
 }
 
+// To refactor:
+
+$menuLis[0].addEventListener("click", function(){
+	menuClick();
+	updateGreen(0);
+	updateRed(0);
+});
+
+$menuLis[1].addEventListener("click", function(){
+	menuClick();
+	updateGreen(1);
+	updateRed(1);
+});
+
+$menuLis[2].addEventListener("click", function(){
+	menuClick();
+	updateGreen(2);
+	updateRed(2);
+});
+
+$menuLis[3].addEventListener("click", function(){
+	menuClick();
+	updateGreen(3);
+	updateRed(3);
+});
+
+// for (var i=0; i < $menuLis.length; i++) {
+// 	$menuLis[i].addEventListener("click", function(){
+// 		menuClick();
+// 		updateGreen(0);
+// 		updateRed(0);
+// 	});
+// }
