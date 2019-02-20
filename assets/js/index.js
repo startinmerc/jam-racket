@@ -20,45 +20,34 @@ function menuClick() {
 	$menu.addClass("menuTop");
 }
 
-function updateGreen(i) {
+function updateText(i) {
 	$("#green .text").html(greenContent[i]);
-}
-
-function updateRed(i) {
 	$("#red .text").css("margin-top", $("#green .text").height() + 150);
 	$("#red .text").html(redContent[i]);
 }
 
 // To refactor:
 
+// $menuLis.forEach(function(v,i,a){
+// 	v.click(function(){console.log("£");})
+// })
+
 $menuLis[0].addEventListener("click", function(){
 	menuClick();
-	updateGreen(0);
-	updateRed(0);
+	updateText(0);
 });
 
 $menuLis[1].addEventListener("click", function(){
 	menuClick();
-	updateGreen(1);
-	updateRed(1);
+	updateText(1);
 });
 
 $menuLis[2].addEventListener("click", function(){
 	menuClick();
-	updateGreen(2);
-	updateRed(2);
+	updateText(2);
 });
 
 $menuLis[3].addEventListener("click", function(){
 	menuClick();
-	updateGreen(3);
-	updateRed(3);
+	updateText(3);
 });
-
-// for (var i=0; i < $menuLis.length; i++) {
-// 	$menuLis[i].addEventListener("click", function(){
-// 		menuClick();
-// 		updateGreen(0);
-// 		updateRed(0);
-// 	});
-// }
