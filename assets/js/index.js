@@ -13,9 +13,17 @@ var listPop = anime({
   autoplay: false
 });
 
+var titleTextOptions = {
+  strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
+  typeSpeed: 80
+}
+
+var titleTextTyped = new Typed("#titleText", titleTextOptions);
+
 document.querySelector("#menuTitle").onclick = listPop.play;
 
-function menuClick() {
+
+function menuToTop() {
 	$menu.removeClass("menuActive");
 	$menu.addClass("menuTop");
 }
@@ -33,21 +41,23 @@ function updateText(i) {
 // })
 
 $menuLis[0].addEventListener("click", function(){
-	menuClick();
+	menuToTop();
 	updateText(0);
 });
 
 $menuLis[1].addEventListener("click", function(){
-	menuClick();
+	menuToTop();
 	updateText(1);
 });
 
 $menuLis[2].addEventListener("click", function(){
-	menuClick();
+	menuToTop();
 	updateText(2);
 });
 
 $menuLis[3].addEventListener("click", function(){
-	menuClick();
+	menuToTop();
 	updateText(3);
 });
+
+
