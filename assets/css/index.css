@@ -76,7 +76,7 @@ svg {
 	cursor: pointer;
 }
 
-.menu span {
+#arrow {
 	display: inline-block;
 	transition: transform 150ms linear;
 }
@@ -89,7 +89,7 @@ svg {
 	animation: divTxtHvr 300ms ease-out forwards;
 }
 
-.menu:hover span {
+.menu:hover #arrow {
 	transform: rotate(90deg) translate(10%,10%);
 }
 
