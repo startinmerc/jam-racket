@@ -36,6 +36,10 @@ svg {
 	fill: var(--jr-green);
 }
 
+.yellow {
+	fill: var(--jr-yellow);
+}
+
 .menu {
 	background: var(--jr-yellow);
 	color: var(--jr-purple);
@@ -94,23 +98,25 @@ svg {
 	100% {height: 50vh;}
 }
 
-.polygon {
-  float: right;
-  shape-outside: polygon(40% 100%, 60% 0%, 100% 0%, 100% 100%);
-  clip-path:     polygon(40% 100%, 60% 0%, 100% 0%, 100% 100%);
-  height: 100vh;
-  width: 100vw;
-  /*background: var(--jr-red);*/
+#green {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-#green {
+#green .polygon {
+  float: right;
+  shape-outside: polygon(39% 100%, 59% 0%, 100% 0%, 100% 100%);
+  clip-path:     polygon(39% 100%, 59% 0%, 100% 0%, 100% 100%);
+  height: 100vh;
+  width: 100vw;
+  /*background: var(--jr-yellow);*/
+}
+
+#green .text {
 	text-align: right;
 	padding-left: 20%;
 	padding-top: 150px;
-}
-
-#green h1 {
-	margin-top: 0;
 }
 
 #green img {
@@ -118,6 +124,36 @@ svg {
 	height: auto;
 	position: absolute;
 	left: 10%;
+	bottom: 150px;
+	mix-blend-mode: saturation;
+	z-index: 0;
+}
+
+#red {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#red .polygon {
+  float: left;
+  shape-outside: polygon(39% 100%, 59% 0%, 61% 0%, 41% 100%);
+  clip-path:     polygon(39% 100%, 59% 0%, 61% 0%, 41% 100%);
+  height: 100vh;
+  width: 100vw;
+  background: var(--jr-yellow);
+}
+
+#red .text {
+	padding-right: 20%;
+	padding-bottom: 150px;
+}
+
+#red img {
+	width: 40vw;
+	height: auto;
+	position: absolute;
+	right: 10%;
 	bottom: 150px;
 	mix-blend-mode: saturation;
 	z-index: 0;
