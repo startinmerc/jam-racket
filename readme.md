@@ -1,5 +1,7 @@
 #JAM_RACKET
 
-* SVG? clipping to crop image
-* JS library of alternate contents
-* link these to different links
+* load image into svg as background
+* refactor menuLis listeners
+* animate content loading in
+* change easing
+* possibly refactor anime to a timeline?
