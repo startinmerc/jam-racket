@@ -1,5 +1,5 @@
 var $menuLis = Array.from(document.querySelectorAll(".menuItem")),
-	$menu = document.querySelector('.menu'),
+	$menu = document.querySelector('#menu'),
 	$greenText = document.querySelector("#green .text"),
 	$redText = document.querySelector("#red .text");
 
