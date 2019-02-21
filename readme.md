@@ -1,7 +1,13 @@
 #JAM_RACKET
 
-* load image into svg as background - __nope__
-* refactor menuLis listeners - __nope__
+Short term:
+
 * animate content loading in
-* change easing
-* possibly refactor anime to a timeline? - __nope__
+* change easing on animes
+* handle interruptions of animes
+* stop typed on menu click
+
+Long term:
+
+* load images into svgs as background
+* add glitch effects
