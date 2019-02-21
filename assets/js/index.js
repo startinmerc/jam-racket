@@ -1,6 +1,7 @@
-var $menuTitle = $("#menuTitle"),
-	$menuLis = Array.from($(".menuItem")),
-	$menu = $('.menu:first');
+var $menuLis = Array.from(document.querySelectorAll(".menuItem")),
+	$menu = document.querySelector('.menu'),
+	$greenText = document.querySelector("#green .text"),
+	$redText = document.querySelector("#red .text");
 
 var	isTop = false,
 	expanded = false;
@@ -50,15 +51,15 @@ var menuToTop = anime({
 });
 
 
-$(document).ready(function(){
+window.onload = function(){
 	addMenuListeners();
-})
+}
 
 
 function updateText(i) {
-	$("#green .text").html(greenContent[i]);
-	$("#red .text").css("margin-top", $("#green .text").height() + 150);
-	$("#red .text").html(redContent[i]);
+	$greenText.innerHTML = greenContent[i];
+	$redText.style.marginTop = $greenText.clientHeight + "px";
+	$redText.innerHTML = redContent[i];
 };
 
 function addMenuListeners() {
@@ -71,7 +72,6 @@ function addMenuListeners() {
 function addMenuItemListener(v,i){
 	// Add click event listener to menu item
 	v.addEventListener("click", function(){
-		console.log(expanded);
 		// Call updateText for related index in content.js
 		updateText(i);
 		// Minimise menu
@@ -89,8 +89,7 @@ function addMenuItemListener(v,i){
 
 function addMenuTitleListener(){
 	// Add to menu title
-	document.querySelector(".menu").addEventListener("click", function(){
-		console.log(expanded);
+	$menu.addEventListener("click", function(){
 		// if menu is expanded
 		if (expanded) {
 			// play menu expansion timeline in reverse
@@ -106,17 +105,3 @@ function addMenuTitleListener(){
 		};
 	});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
