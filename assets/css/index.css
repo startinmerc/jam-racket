@@ -33,6 +33,18 @@ svg {
 	fill: var(--jr-yellow);
 }
 
+.greenPicture {
+	fill:url(#greenPattern);
+	/*mix-blend-mode: difference;*/
+	opacity: 0.2;
+}
+
+.redPicture {
+	fill:url(#redPattern);
+	/*mix-blend-mode: difference;*/
+	opacity: 0.2;
+}
+
 /*Container*/
 
 #container {

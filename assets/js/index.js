@@ -2,7 +2,9 @@ var $menuLis = Array.from(document.querySelectorAll(".menuItem")),
 	$menu = document.querySelector('nav'),
 	$greenText = document.querySelector("#green .text"),
 	$redText = document.querySelector("#red .text"),
-	$titleText = document.querySelector("#titleText");
+	$titleText = document.querySelector("#titleText"),
+	$greenImage = document.querySelector("#greenPattern image");
+	$redImage = document.querySelector("#redPattern image");
 
 var	isTop = false,
 	expanded = false;
@@ -59,10 +61,15 @@ window.onload = function(){
 
 
 function updateText(i) {
-	$greenText.innerHTML = greenContent[i];
+	$greenText.innerHTML = greenContent[i].words;
 	$redText.style.marginTop = $greenText.clientHeight + "px";
-	$redText.innerHTML = redContent[i];
+	$redText.innerHTML = redContent[i].words;
 };
+
+function updateImages(i){
+	$greenImage.setAttribute("xlink:href", greenContent[i].image);
+	$redImage.setAttribute("xlink:href", redContent[i].image);
+}
 
 function addMenuListeners() {
 	// Call add event listeners for menu items
@@ -74,8 +81,9 @@ function addMenuListeners() {
 function addMenuItemListener(v,i){
 	// Add click event listener to menu item
 	v.addEventListener("click", function(){
-		// Call updateText for related index in content.js
+		// Update related index in content.js
 		updateText(i);
+		updateImages(i);
 		// Minimise menu
 		menuExpand.play();
 		// expanded = false
@@ -85,6 +93,7 @@ function addMenuItemListener(v,i){
 			// Play animation to move menu to top
 			menuToTop.play();			
 		};
+		// Stop this listener from bubbling to menu bar
 		event.stopPropagation();
 	});
 }
