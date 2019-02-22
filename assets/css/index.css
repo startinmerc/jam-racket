@@ -43,7 +43,7 @@ svg {
 
 /*Menu*/
 
-.menu {
+nav {
 	background: var(--jr-yellow);
 	color: var(--jr-purple);
 	font-size: 4rem;
@@ -70,7 +70,7 @@ svg {
 }
 
 
-.menu:hover #arrow {
+nav:hover #arrow {
 	transform: rotate(90deg) translate(10%,10%);
 }
 
