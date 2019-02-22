@@ -1,7 +1,8 @@
 var $menuLis = Array.from(document.querySelectorAll(".menuItem")),
-	$menu = document.querySelector('#menu'),
+	$menu = document.querySelector('nav'),
 	$greenText = document.querySelector("#green .text"),
-	$redText = document.querySelector("#red .text");
+	$redText = document.querySelector("#red .text"),
+	$titleText = document.querySelector("#titleText");
 
 var	isTop = false,
 	expanded = false;
@@ -10,7 +11,8 @@ var	isTop = false,
 
 var titleTextOptions = {
 	strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
-	typeSpeed: 80
+	typeSpeed: 80,
+	smartBackspace: false
 };
 
 var titleTextTyped = new Typed("#titleText", titleTextOptions);
@@ -29,14 +31,14 @@ menuExpand.add({
 	easing: 'easeOutElastic',
 })
 .add({
-	targets: '.menu',
-	height: ["77px","410px"],
+	targets: "nav",
+	height: ["80px","410px"],
 	duration: 200,
 },0);
 
 
 var menuToTop = anime({
-	targets: '.menu',
+	targets: "nav",
 	top: ['50%','0%'],
 	left: ['50%','0'],
 	translateY: ['-50%','0%'],
@@ -102,6 +104,13 @@ function addMenuTitleListener(){
 			menuExpand.play();
 			// update expanded
 			expanded = true;
+		};
+		// if menu is centre screen
+		if(!isTop){
+			// reset typed animation
+			titleTextTyped.reset(false);
+			// replace with static HTML
+			$titleText.innerHTML = "JAM_RACKET";
 		};
 	});
 }
