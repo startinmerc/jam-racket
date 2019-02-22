@@ -29,13 +29,14 @@ var menuExpand = anime.timeline({
 menuExpand.add({
 	targets: '.menuItem',
 	translateX: ["-200%","0%"],
-	delay: anime.stagger(50, {start: 50}),
-	easing: 'easeOutElastic',
+	delay: anime.stagger(50, {start: 0}),
+	easing: 'linear',
 })
 .add({
 	targets: "nav",
 	height: ["80px","410px"],
 	duration: 200,
+	easing: 'linear'
 },0);
 
 
@@ -51,7 +52,8 @@ var menuToTop = anime({
 	complete: function(){
 		isTop = true;
 	},
-	duration: 200
+	duration: 200,
+	easing: 'linear'
 });
 
 
