@@ -77,6 +77,7 @@ nav {
 
 .menuItem:hover {
 	mix-blend-mode: hue;
+	font-style: italic;
 }
 
 
