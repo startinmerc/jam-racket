@@ -84,7 +84,7 @@ function addMenuItemListener(v,i){
 	v.addEventListener("click", function(){
 		// Update related index in content.js
 		updateText(i);
-		// updateImages(i);
+		updateImages(i);
 		// Minimise menu
 		menuExpand.play();
 		// expanded = false
