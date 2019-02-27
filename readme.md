@@ -3,9 +3,8 @@
 Short term:
 
 * handle interruptions of animes
-* delay content loading to after animation
- * make image loading a promise
-* add lighten/darken gradients?
+* load all images on page load, reveal as required
+ * transform: trnaslate
 
 Long term:
 
