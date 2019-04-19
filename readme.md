@@ -2,9 +2,10 @@
 
 Short term:
 
+* change slide ins to appearing, more jarring
 * handle interruptions of animes
 * load all images on page load, reveal as required
- * transform: trnaslate
+ * emulate slow loading jpeg? too fancy?
 
 Long term:
 
