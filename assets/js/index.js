@@ -10,13 +10,13 @@ var	isTop = false,
 	expanded = false;
 
 
-var titleTextOptions = {
-	strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
-	typeSpeed: 80,
-	smartBackspace: false
-};
+// var titleTextOptions = {
+// 	strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
+// 	typeSpeed: 80,
+// 	smartBackspace: false
+// };
 
-var titleTextTyped = new Typed("#titleText", titleTextOptions);
+// var titleTextTyped = new Typed("#titleText", titleTextOptions);
 
 var menuExpand = anime.timeline({
 	autoplay: false,
@@ -62,9 +62,9 @@ window.onload = function(){
 
 
 function updateText(i) {
-	$greenText.innerHTML = greenContent[i].words;
-	$redText.style.marginTop = $greenText.clientHeight + "px";
 	$redText.innerHTML = redContent[i].words;
+	$greenText.style.marginTop = $redText.clientHeight + "px";
+	$greenText.innerHTML = greenContent[i].words;
 };
 
 function updateImages(i){
@@ -84,7 +84,7 @@ function addMenuItemListener(v,i){
 	v.addEventListener("click", function(){
 		// Update related index in content.js
 		updateText(i);
-		updateImages(i);
+		// updateImages(i);
 		// Minimise menu
 		menuExpand.play();
 		// expanded = false
