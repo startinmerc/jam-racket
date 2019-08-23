@@ -27,10 +27,11 @@ var menuExpand = anime.timeline({
 
 menuExpand.add({
 	targets: '.menuItem',
-	translateX: ["-200%","0%"],
+	// translateX: ["-150%","0%"],
+	opacity: ["0","1"],
 	delay: anime.stagger(50, {start: 0}),
-	easing: 'linear',
-})
+	easing: 'steps(1)',
+}, -200)
 .add({
 	targets: "nav",
 	height: ["80px","410px"],
