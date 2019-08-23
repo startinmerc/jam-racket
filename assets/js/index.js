@@ -10,13 +10,13 @@ var	isTop = false,
 	expanded = false;
 
 
-// var titleTextOptions = {
-// 	strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
-// 	typeSpeed: 80,
-// 	smartBackspace: false
-// };
+var titleTextOptions = {
+	strings: ["JAM_RACKET","JACKET_ARM","JAM_RACKET","TACKER_JAM","JAM_RACKET","EAT_MR_JACK","JAM_RACKET","CAT_AM_JERK","JAM_RACKET"],
+	typeSpeed: 80,
+	smartBackspace: false
+};
 
-// var titleTextTyped = new Typed("#titleText", titleTextOptions);
+var titleTextTyped = new Typed("#titleText", titleTextOptions);
 
 var menuExpand = anime.timeline({
 	autoplay: false,
